@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="testTables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		 
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/pinyougoudb" userId="root"
+			password="">
+		</jdbcConnection>
+		
+		 <!--
+		<jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@localhost:1521:orcl" 
+			userId="jason"
+			password="jason">
+		</jdbcConnection>
+  -->
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成POjO类的位置 -->
+		<javaModelGenerator targetPackage="com.web.shopping.pojo"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="com.web.shopping.mapper"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.web.shopping.mapper"
+			targetProject=".\src">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!-- 指定数据库表 -->
+		
+		<table tableName="tb_address" domainObjectName="TbAddress"/>
+		<table tableName="tb_areas" domainObjectName="TbAreas"/>
+		<table tableName="tb_brand" domainObjectName="TbBrand"/>
+		<table tableName="tb_cities" domainObjectName="TbCities"/>
+		<table tableName="tb_content" domainObjectName="TbContent"/>
+		<table tableName="tb_content_category" domainObjectName="TbContentCategory"/>
+		<table tableName="tb_freight_template" domainObjectName="TbFreightTemplate"/>
+		<table tableName="tb_goods" domainObjectName="TbGoods"/>
+		<table tableName="tb_goods_desc" domainObjectName="TbGoodsDesc"/>
+		<table tableName="tb_item" domainObjectName="TbItem"/>
+		<table tableName="tb_item_cat" domainObjectName="TbItemCat"/>
+		<table tableName="tb_order" domainObjectName="TbOrder"/>
+		<table tableName="tb_order_item" domainObjectName="TbOrderItem"/>
+		<table tableName="tb_pay_log" domainObjectName="TbPayLog"/>
+		<table tableName="tb_provinces" domainObjectName="TbProvinces"/>
+		<table tableName="tb_seckill_goods" domainObjectName="TbSeckillGoods"/>
+		<table tableName="tb_seckill_order" domainObjectName="TbSeckillOrder"/>
+		<table tableName="tb_seller" domainObjectName="TbSeller"/>
+		<table tableName="tb_specification" domainObjectName="TbSpecification"/>
+		<table tableName="tb_specification_option" domainObjectName="TbSpecificationOption"/>
+		<table tableName="tb_type_template" domainObjectName="TbTypeTemplate"/>
+		<table tableName="tb_user" domainObjectName="TbUser"/>
+		
+		<!-- 
+			<table tableName="user" domainObjectName="User"/>
+			<table tableName="department" domainObjectName="Department"/>
+		 -->
+		
+		
+		<!-- 
+			<table tableName="news" domainObjectName="News"/>
+		<table tableName="category" domainObjectName="Category"/>
+		 -->
+		
+		
+		<!-- 
+			<table tableName="items" domainObjectName="Items"/>
+		 -->
+		
+		<!-- 
+		<table tableName="auction" domainObjectName="Auction"/>
+		<table tableName="auctionrecord" domainObjectName="AuctionRecord"/>
+		<table tableName="auctionuser" domainObjectName="AuctionUser"/>
+		 -->
+		
+		<!-- <table schema="" tableName="sys_user"></table>
+		<table schema="" tableName="sys_role"></table>
+		<table schema="" tableName="sys_permission"></table>
+		<table schema="" tableName="sys_user_role"></table>
+		<table schema="" tableName="sys_role_permission"></table> -->
+		
+		<!-- 有些表的字段需要指定java类型
+		 <table schema="" tableName="">
+			<columnOverride column="" javaType="" />
+		</table> -->
+	</context>
+</generatorConfiguration>
