@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: shopping-content-ms
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Hua 哥哥
+Implementation-Vendor-Id: com.web.shopping
+Build-Jdk: 1.8.0_91
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/shopping-parent/shopping-content-ms
+Created-By: Maven Integration for Eclipse
+
